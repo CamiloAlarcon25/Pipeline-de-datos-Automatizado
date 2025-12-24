@@ -46,3 +46,5 @@ La implementación de este flujo de trabajo permite a la organización:
 •	Escalabilidad: El sistema está preparado para recibir miles de registros sin perder rendimiento.
 
 •	Veracidad: Al centralizar los datos en SQL y validarlos con scripts, se eliminan las discrepancias comunes de los reportes en archivos Excel sueltos.
+
+Enlace del Dashboard en formato PDF: https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/Proyecto_BI.pdf
