@@ -37,6 +37,10 @@ El Dashboard (Proyecto_BI.pbix) se conecta directamente a la instancia de SQL, p
 
 •	Ranking de Rendimiento: Identificación automática de los 5 productos más vendidos y las sucursales más rentables.
 
+<img width="400" height="400" alt="Gemini_Generated_Image_sp66uisp66uisp66" src="https://github.com/user-attachments/assets/d133e934-7e90-4af7-9461-b821e5d512ec" /> 
+
+Figura 1: Diagrama de Flujo
+
 ## 4. Resultados y Valor Agregado
 
 La implementación de este flujo de trabajo permite a la organización:
