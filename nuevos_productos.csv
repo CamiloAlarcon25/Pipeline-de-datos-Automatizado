@@ -1,0 +1,5 @@
+id_producto,nombre_producto,categoria,precio_venta,costo_unitario
+9,Smartwatch,Electrónica,250.0,150.0
+10,Cámara Web,Accesorios,80.0,45.0
+11,Disco Duro Externo,Almacenamiento,120.0,70.0
+12,Memoria USB,Almacenamiento,30.0,10.0
