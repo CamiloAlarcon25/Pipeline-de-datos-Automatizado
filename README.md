@@ -1,54 +1,121 @@
-# Pipeline de Datos Automatizado: Dashboard de Ventas y Utilidades
+# ⚙️ Pipeline de Datos Automatizado: Dashboard de Ventas y Utilidades
 
-## 1. Contexto y Objetivos
+> **Arquitectura de datos end-to-end para el monitoreo comercial:** Ingesta y ETL automatizado con Python, almacenamiento relacional optimizado en MySQL y visualización ejecutiva en Power BI para el control de rentabilidad multisucursal.
 
-El objetivo de este proyecto fue diseñar e implementar un ecosistema de datos integrado para el monitoreo de ventas, costos y utilidades de una empresa con múltiples sucursales. El enfoque principal fue la automatización del flujo de información, eliminando procesos manuales y asegurando la integridad de los datos desde su generación hasta su visualización.
+![Power BI](https://img.shields.io/badge/Power_BI-F2C94C?style=for-the-badge&logo=powerbi&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 
-## 2. Arquitectura del Proyecto (Tecnologías)
+---
 
-Herramientas:
+## 📌 Navegación Rápida
+[← Volver al Portafolio Principal](https://camiloalarcon25.github.io/Mi_Portafolio_v1/)
 
-Generación y ETL	Python (Pandas):	Script automatizado para la inserción de nuevos registros (sucursales, productos, ventas) evitando duplicados.
+- [Vista General del Dashboard](#-vista-general-del-dashboard)
+- [El Desafío de Negocio](#-el-desafío-de-negocio)
+- [Arquitectura de Datos y Metodología](#arquitectura)
+- [Insights y Hallazgos Clave](#-insights-y-hallazgos-clave)
+- [Vistas Detalladas](#vistas)
+- [Recomendaciones de Gestión](#-recomendaciones-de-gestión)
+- [Recursos del Repositorio](#-recursos-del-repositorio)
 
-Almacenamiento	MySQL:	Base de datos relacional robusta para centralizar la información operativa.
+---
 
-Validación	SQL:	Consultas avanzadas para auditoría de datos, cálculo de utilidades y top de ventas antes de la visualización.
+## 📸 Vista General del Dashboard
 
-Visualización	Power BI:	Conexión directa a SQL para la creación de un Dashboard ejecutivo interactivo.
+> *El cuadro de mando consolida los ingresos, costos y márgenes de utilidad en tiempo real, ofreciendo una visión integral del rendimiento operacional por sucursal y categoría de producto.*
 
-## 3. Desarrollo Técnico
-### A. Gestión de Base de Datos (SQL)
-Se diseñó un esquema relacional optimizado en MySQL (ventas_costos.sql) que incluye tablas de sucursales, productos, ventas y costos. Se utilizaron llaves primarias y foráneas para garantizar la coherencia de la información. Además, se crearon scripts de revisión (revisión_datos.sql) para calcular métricas clave como la Utilidad por Sucursal directamente en el motor de base de datos.
-### B. Automatización con Python (Pipeline ETL)
-Para simular un entorno de producción real, se desarrolló un script en Python (insertar_nuevos_datos.py) que:
+![Dashboard Principal de Ventas y Utilidades](Principal_Ventas.PNG)
 
-•	Carga datos desde archivos CSV.
+---
 
-•	Conecta con la base de datos MySQL.
+## 🎯 El Desafío de Negocio
 
-•	Utiliza la lógica ON DUPLICATE KEY UPDATE para actualizar registros existentes o insertar nuevos, asegurando que el pipeline pueda ejecutarse repetidamente sin errores.
+La gestión comercial de una empresa multisucursal suele enfrentar inconsistencias debido al manejo fragmentado de reportes en planillas independientes. Esto genera retrasos en la consolidación de información y riesgos de duplicidad de datos.
 
-### C. Business Intelligence (Power BI)
-El Dashboard (Proyecto_BI.pbix) se conecta directamente a la instancia de SQL, permitiendo:
+El objetivo de este proyecto fue **diseñar e implementar un flujo de datos automatizado y escalable**, resolviendo preguntas clave del negocio:
+1. **¿Cuál es la rentabilidad neta real por sucursal tras descontar la estructura de costos operativos?**
+2. **¿Cómo eliminar la duplicidad y errores humanos en la ingesta periódica de transacciones?**
+3. **¿Cuáles son los Top 5 productos más vendidos y las sucursales con mejor margen comercial?**
 
-•	Análisis de Rentabilidad: Comparación visual entre Ingresos y Costos para determinar el margen de utilidad.
+---
 
-•	Segmentación Dinámica: Filtros por región, ciudad y gerente de sucursal.
+## <a name="arquitectura"></a>🛠️ Arquitectura de Datos y Metodología
 
-•	Ranking de Rendimiento: Identificación automática de los 5 productos más vendidos y las sucursales más rentables.
+El proyecto implementa un pipeline de datos robusto articulado en tres capas tecnológicas:
 
-<img width="400" height="400" alt="Gemini_Generated_Image_sp66uisp66uisp66" src="https://github.com/user-attachments/assets/d133e934-7e90-4af7-9461-b821e5d512ec" /> 
+```text
+[ Archivos CSV / Ingesta ] ──( Python ETL Script )──> [ Base de Datos MySQL ] ──( DirectQuery / Modelado )──> [ Dashboard Power BI ]
+```
 
-Figura 1: Diagrama de Flujo
+### 1. Ingesta y Script ETL Automatizado (Python & Pandas)
 
-## 4. Resultados y Valor Agregado
+* **Origen:** Archivos planos de transacciones en formato CSV.
+* **Procesamiento:** Script en Python (`insertar_nuevos_datos.py`) con Pandas para la limpieza de datos y conexión a la base de datos MySQL.
+* **Manejo de Duplicados:** Implementación de la lógica `ON DUPLICATE KEY UPDATE` en SQL/Python para garantizar que el script pueda ejecutarse de forma recurrente sin generar registros repetidos.
 
-La implementación de este flujo de trabajo permite a la organización:
+### 2. Almacenamiento y Auditoría de Datos (MySQL)
 
-•	Reducir tiempos operativos: La carga de datos que antes podía ser manual ahora se realiza mediante un script.
+* **Esquema Relacional:** Modelo optimizado (`ventas_costos.sql`) con tablas de `Sucursales`, `Productos`, `Ventas` y `Costos`, vinculadas mediante llaves primarias y foráneas (1:N).
+* **Consultas de Validación:** Scripts de auditoría (`revision_datos.sql`) para precalculos de márgenes e integridad referencial antes de la capa de BI.
 
-•	Escalabilidad: El sistema está preparado para recibir miles de registros sin perder rendimiento.
+### 3. Modelado y Visualización (Power BI)
 
-•	Veracidad: Al centralizar los datos en SQL y validarlos con scripts, se eliminan las discrepancias comunes de los reportes en archivos Excel sueltos.
+* **Conexión Directa:** Vinculación con la base de datos MySQL para actualización dinámica de métricas.
+* **Métricas DAX Calculadas:**
+  * **Ingresos Totales:** `SUM(Ventas[Monto_Total])`
+  * **Costos Totales:** `SUM(Costos[Monto_Costo])`
+  * **Utilidad Neta:** `[Ingresos Totales] - [Costos Totales]`
+  * **Margen de Utilidad (%):** `DIVIDE([Utilidad Neta], [Ingresos Totales], 0)`
 
-Enlace del Dashboard en formato PDF: https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/Proyecto_BI.pdf
+---
+
+## 📈 Insights y Hallazgos Clave
+
+| Métrica / Dimensión | Resultado Observado | Impacto en el Negocio |
+| :--- | :--- | :--- |
+| **Ingresos Totales** | `$XX.XXX.XXX` | Consolidación unificada de todas las sucursales |
+| **Margen de Utilidad Global** | `XX,X%` | Visibilidad real del margen tras deducción de costos |
+| **Procesamiento ETL** | `Automático` | Eliminación de cargas manuales en planillas |
+| **Integridad de Datos** | `100% Sin Duplicados` | Garantizada por restricciones de llaves en MySQL |
+
+### 💡 Principales Conclusiones
+
+* **Optimización Operativa:** La automatización de la ingesta de datos reduce significativamente los tiempos de preparación de reportes frente a procesos manuales.
+* **Centralización Única de la Verdad:** El almacenamiento en MySQL elimina las discrepancias típicas de archivos Excel dispersos entre gerentes regionales.
+* **Escalabilidad Garantizada:** La estructura de base de datos relacional y el script idempotente en Python preparan a la organización para procesar grandes volúmenes de transacciones sin pérdida de rendimiento.
+
+---
+
+## <a name="vistas"></a>🖼️ Vistas Detalladas del Dashboard
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <b>Análisis de Rentabilidad por Sucursal</b><br><br>
+      <img src="Rentabilidad_Sucursales.PNG" alt="Rentabilidad por Sucursal" width="100%"/>
+    </td>
+    <td width="50%" align="center">
+      <b>Ranking Top 5 Productos y Segmentación Regional</b><br><br>
+      <img src="Top_Productos.PNG" alt="Top Productos" width="100%"/>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 💡 Recomendaciones de Gestión
+
+1. **Programación de Ejecución ETL (Cron Jobs):** Automatizar el script de Python mediante tareas programadas (Schedule/Cron) para realizar cargas nocturnas periódicas.
+2. **Reasignación de Inventario por Rendimiento:** Utilizar el Ranking Top 5 para redistribuir stock hacia las sucursales con mayor rotación y mejor margen de utilidad.
+3. **Monitoreo de Filiales en Zona Crítica:** Auditar las sucursales que presenten un margen de utilidad inferior a la media global para aplicar ajustes en su estructura de costos.
+
+---
+
+## 📂 Recursos del Repositorio
+
+* 📄 **Reporte Ejecutivo (PDF):** [Proyecto_BI.pdf](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/Proyecto_BI.pdf)
+* 🐍 **Script Pipeline ETL (Python):** [Ver archivo .py](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/insertar_nuevos_datos.py)
+* 🗄️ **Modelo y Consultas (MySQL):** [Ver script .sql](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/ventas_costos.sql)
+* 📊 **Dashboard Interactivo (Power BI):** [Descargar archivo .pbix](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/Proyecto_BI.pbix)
