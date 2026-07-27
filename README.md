@@ -26,7 +26,7 @@
 
 > *El cuadro de mando consolida los ingresos, costos y márgenes de utilidad en tiempo real, ofreciendo una visión integral del rendimiento operacional por sucursal y categoría de producto.*
 
-![Dashboard Principal de Ventas y Utilidades](Principal_Ventas.PNG)
+![Dashboard Principal de Ventas y Utilidades](Principal.PNG)
 
 ---
 
@@ -93,12 +93,12 @@ El proyecto implementa un pipeline de datos robusto articulado en tres capas tec
 <table width="100%">
   <tr>
     <td width="50%" align="center">
-      <b>Análisis de Rentabilidad por Sucursal</b><br><br>
-      <img src="Rentabilidad_Sucursales.PNG" alt="Rentabilidad por Sucursal" width="100%"/>
+      <b>Análisis de Utilidad por Ciudad</b><br><br>
+      <img src="Util_Ciudad.PNG" alt="Rentabilidad por Sucursal" width="100%"/>
     </td>
     <td width="50%" align="center">
-      <b>Ranking Top 5 Productos y Segmentación Regional</b><br><br>
-      <img src="Top_Productos.PNG" alt="Top Productos" width="100%"/>
+      <b>Crecimiento en relación al mes anterior</b><br><br>
+      <img src="Crecimiento.PNG" alt="Top Productos" width="100%"/>
     </td>
   </tr>
 </table>
