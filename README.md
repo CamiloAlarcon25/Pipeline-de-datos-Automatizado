@@ -1,4 +1,4 @@
-# ⚙️ Pipeline de Datos Automatizado: Dashboard de Ventas y Utilidades
+# Pipeline de Datos Automatizado: Dashboard de Ventas y Utilidades
 
 > **Arquitectura de datos end-to-end para el monitoreo comercial:** Ingesta y ETL automatizado con Python, almacenamiento relacional optimizado en MySQL y visualización ejecutiva en Power BI para el control de rentabilidad multisucursal.
 
@@ -9,20 +9,20 @@
 
 ---
 
-## 📌 Navegación Rápida
+## Navegación Rápida
 [← Volver al Portafolio Principal](https://camiloalarcon25.github.io/Mi_Portafolio_v1/)
 
-- [Vista General del Dashboard](#-vista-general-del-dashboard)
-- [El Desafío de Negocio](#-el-desafío-de-negocio)
+- [Vista General del Dashboard](#vista-general-del-dashboard)
+- [El Desafío de Negocio](#el-desafío-de-negocio)
 - [Arquitectura de Datos y Metodología](#arquitectura)
-- [Insights y Hallazgos Clave](#-insights-y-hallazgos-clave)
+- [Insights y Hallazgos Clave](#insights-y-hallazgos-clave)
 - [Vistas Detalladas](#vistas)
-- [Recomendaciones de Gestión](#-recomendaciones-de-gestión)
-- [Recursos del Repositorio](#-recursos-del-repositorio)
+- [Recomendaciones de Gestión](#recomendaciones-de-gestión)
+- [Recursos del Repositorio](#recursos-del-repositorio)
 
 ---
 
-## 📸 Vista General del Dashboard
+## Vista General del Dashboard
 
 > *El cuadro de mando consolida los ingresos, costos y márgenes de utilidad en tiempo real, ofreciendo una visión integral del rendimiento operacional por sucursal y categoría de producto.*
 
@@ -30,7 +30,7 @@
 
 ---
 
-## 🎯 El Desafío de Negocio
+## El Desafío de Negocio
 
 La gestión comercial de una empresa multisucursal suele enfrentar inconsistencias debido al manejo fragmentado de reportes en planillas independientes. Esto genera retrasos en la consolidación de información y riesgos de duplicidad de datos.
 
@@ -41,7 +41,7 @@ El objetivo de este proyecto fue **diseñar e implementar un flujo de datos auto
 
 ---
 
-## <a name="arquitectura"></a>🛠️ Arquitectura de Datos y Metodología
+## <a name="arquitectura"></a>Arquitectura de Datos y Metodología
 
 El proyecto implementa un pipeline de datos robusto articulado en tres capas tecnológicas:
 
@@ -71,7 +71,7 @@ El proyecto implementa un pipeline de datos robusto articulado en tres capas tec
 
 ---
 
-## 📈 Insights y Hallazgos Clave
+## Insights y Hallazgos Clave
 
 | Métrica / Dimensión | Resultado Observado | Impacto en el Negocio |
 | :--- | :--- | :--- |
@@ -80,7 +80,7 @@ El proyecto implementa un pipeline de datos robusto articulado en tres capas tec
 | **Procesamiento ETL** | `Automático` | Eliminación de cargas manuales en planillas |
 | **Integridad de Datos** | `100% Sin Duplicados` | Garantizada por restricciones de llaves en MySQL |
 
-### 💡 Principales Conclusiones
+### Principales Conclusiones
 
 * **Optimización Operativa:** La automatización de la ingesta de datos reduce significativamente los tiempos de preparación de reportes frente a procesos manuales.
 * **Centralización Única de la Verdad:** El almacenamiento en MySQL elimina las discrepancias típicas de archivos Excel dispersos entre gerentes regionales.
@@ -88,7 +88,7 @@ El proyecto implementa un pipeline de datos robusto articulado en tres capas tec
 
 ---
 
-## <a name="vistas"></a>🖼️ Vistas Detalladas del Dashboard
+## <a name="vistas"></a>Vistas Detalladas del Dashboard
 
 <table width="100%">
   <tr>
@@ -105,7 +105,7 @@ El proyecto implementa un pipeline de datos robusto articulado en tres capas tec
 
 ---
 
-## 💡 Recomendaciones de Gestión
+## Recomendaciones de Gestión
 
 1. **Programación de Ejecución ETL (Cron Jobs):** Automatizar el script de Python mediante tareas programadas (Schedule/Cron) para realizar cargas nocturnas periódicas.
 2. **Reasignación de Inventario por Rendimiento:** Utilizar el Ranking Top 5 para redistribuir stock hacia las sucursales con mayor rotación y mejor margen de utilidad.
@@ -113,9 +113,9 @@ El proyecto implementa un pipeline de datos robusto articulado en tres capas tec
 
 ---
 
-## 📂 Recursos del Repositorio
+## Recursos del Repositorio
 
-* 📄 **Reporte Ejecutivo (PDF):** [Proyecto_BI.pdf](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/Proyecto_BI.pdf)
-* 🐍 **Script Pipeline ETL (Python):** [Ver archivo .py](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/insertar_nuevos_datos.py)
-* 🗄️ **Modelo y Consultas (MySQL):** [Ver script .sql](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/ventas_costos.sql)
-* 📊 **Dashboard Interactivo (Power BI):** [Descargar archivo .pbix](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/Proyecto_BI.pbix)
+* **Reporte Ejecutivo (PDF):** [Proyecto_BI.pdf](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/Proyecto_BI.pdf)
+* **Script Pipeline ETL (Python):** [Ver archivo .py](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/insertar_nuevos_datos.py)
+* **Modelo y Consultas (MySQL):** [Ver script .sql](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/ventas_costos.sql)
+* **Dashboard Interactivo (Power BI):** [Descargar archivo .pbix](https://github.com/CamiloAlarcon25/Pipeline-de-datos-Automatizado/blob/main/Proyecto_BI.pbix)
